@@ -1,15 +1,15 @@
-#Comandos SQL para modelagem física
+# Comandos SQL para modelagem física
 
-##Criar banco de dados
+## Criar banco de dados
 CREATE DATABASE vendas_laise CHARACTER SET utf8mb4;
 
-##Entrar no banco de dados criado
+## Entrar no banco de dados criado
 USE DATABASE vendas_laise;
 
-##Criar tabela fabricantes
+## Criar tabela fabricantes
 CREATE TABLE fabricantes(
     id INT <!--número inteiro--> NOT NULL<!--não está nulo--> AUTO_INCREMENT<!--incrementar sozinho--> PRIMARY KEY<!--chave primária: primeiro "comando"-->, 
-    nome VARCHAR(45)<!--texto com limite de 45 palavras--> NOT NULL
+    nome VARCHAR(45)<!--texto com limite de 255 palavras--> NOT NULL
 );
 
 CREATE TABLE produtos(
@@ -21,7 +21,7 @@ CREATE TABLE produtos(
     fabricante_id INT NOT NULL
 );
 
-##Alterando a tabela para criar um relacionamento por meio da chave estrangeira
+## Alterando a tabela para criar um relacionamento por meio da chave estrangeira
 ALTER TABLE produtos 
     ADD CONSTRAINT fk_produtos_fabricantes 
-    FOREING KEY(fabricante_id) REFERENCES fabricantes(id);  
+    FOREIGN KEY(fabricante_id) REFERENCES fabricantes(id);  
