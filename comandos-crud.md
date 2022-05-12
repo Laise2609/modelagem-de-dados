@@ -93,3 +93,4 @@ ON produtos.fabricante_id = fabricantes.id;
 UPDATE fabricantes SET nome = 'LG do Brasil' WHERE id = 4;
 
 ## DELETE
+DELETE FROM produtos WHERE id = 5;
